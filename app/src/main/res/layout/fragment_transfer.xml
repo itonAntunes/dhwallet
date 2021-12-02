@@ -30,7 +30,6 @@
         <ImageView
             android:layout_gravity="end"
             android:layout_marginEnd="16dp"
-            android:scaleType="centerCrop"
             android:src="@drawable/foto"
             android:layout_width="28dp"
             android:layout_height="28dp"
