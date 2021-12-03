@@ -9,7 +9,7 @@
     android:layout_marginBottom="1dp">
 
     <ImageView
-        android:id="@+id/image_contact"
+        android:id="@+id/image"
         android:layout_width="56dp"
         android:layout_height="56dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +22,8 @@
         android:id="@+id/item_contact_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/image_contact"
-        app:layout_constraintTop_toTopOf="@id/image_contact"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintTop_toTopOf="@id/image"
         app:layout_constraintBottom_toTopOf="@id/item_contact_subtitle"
         app:layout_constraintVertical_chainStyle="packed"
         android:layout_marginStart="16dp"
@@ -36,7 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/item_contact_title"
-        app:layout_constraintBottom_toBottomOf="@id/image_contact"
+        app:layout_constraintBottom_toBottomOf="@id/image"
         app:layout_constraintTop_toBottomOf="@id/item_contact_title"
         tools:text="Irmã"
         tools:ignore="MissingConstraints" />
