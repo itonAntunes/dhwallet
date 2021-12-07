@@ -28,6 +28,7 @@
         >
 
         <ImageView
+            android:id="@+id/profile"
             android:layout_gravity="end"
             android:layout_marginEnd="16dp"
             android:src="@drawable/foto"

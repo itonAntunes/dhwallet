@@ -1,8 +1,10 @@
 package com.digitalhouse.dhwallet
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.digitalhouse.dhwallet.adapter.ContactAdapter
@@ -15,6 +17,13 @@ class TransferFragment : Fragment(R.layout.fragment_transfer){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        val profile = view.findViewById<ImageView>(R.id.profile)
+        profile.setOnClickListener{
+            val intent = Intent(it.context, MinhaActivity::class.java)
+            startActivity(intent)
+        }
 
         val listContact = MutableList (10){
             Contact(
