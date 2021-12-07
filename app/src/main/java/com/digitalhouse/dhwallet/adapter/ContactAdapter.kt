@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.digitalhouse.dhwallet.R
 import com.digitalhouse.dhwallet.model.Contact
+import com.digitalhouse.dhwallet.util.ext.load
 
 class ContactAdapter(private val items: List<Contact>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -33,8 +34,7 @@ class ContactViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val subtitle: TextView = view.findViewById(R.id.item_contact_subtitle)
 
     fun bind (item: Contact) {
-        Glide.with(image.context).load(item.image).circleCrop().into(image)
-
+        image.load(item.image)
         title.text = item.name
         subtitle.text = item.type.description
     }
