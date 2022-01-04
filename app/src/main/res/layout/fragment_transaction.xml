@@ -1,14 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TransactionFragment">
 
-    <TextView
-        android:id="@+id/entrada"
+    <View
+        android:id="@+id/background_header"
+        android:background="@drawable/background_card_top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guide_header"
         />
 
-</FrameLayout>
+
+    <androidx.appcompat.widget.Toolbar
+
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/tittle_transaction"
+        app:navigationIcon="@drawable/ic_arrow_backward"
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/foto"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            tools:ignore="ContentDescription"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/ValueText"
+        android:id="@+id/input_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/guide_start"
+        app:layout_constraintEnd_toStartOf="@+id/output_value"
+        app:layout_constraintBottom_toBottomOf="@+id/guide_header"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/ValueText"
+        android:id="@+id/output_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/input_value"
+        app:layout_constraintEnd_toEndOf="@+id/guide_end"
+        app:layout_constraintBottom_toBottomOf="@+id/guide_header"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+    <ImageView
+        android:id="@+id/img_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_down"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="@id/input_value"
+        app:layout_constraintBottom_toBottomOf="@id/input_value"/>
+    <ImageView
+        android:id="@+id/img_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_up"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="@id/output_value"
+        app:layout_constraintBottom_toBottomOf="@id/output_value"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp"/>
+
+    <TextView
+        style="@style/Subtitle"
+        android:id="@+id/subtittle_transfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtittle_transfer"
+        android:layout_marginTop="31dp"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@+id/guide_header" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/nav_transfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_arrow_forward"
+        app:layout_constraintEnd_toStartOf="@id/guide_end"
+        app:layout_constraintTop_toBottomOf="@+id/guide_header"
+        android:layout_marginTop="17dp"
+        android:gravity="end"
+        tools:ignore="MissingConstraints"/>
+
+    <TextView
+        style="@style/Subtitle"
+        android:id="@+id/tittle_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hoje"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@+id/subtittle_transfer" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/tittle_day"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_contact"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@ class TransferFragment : Fragment(R.layout.fragment_transfer){
 
         val profile = view.findViewById<ImageView>(R.id.profile)
         profile.setOnClickListener{
-            val intent = Intent(it.context, MinhaActivity::class.java)
+            val intent = Intent(it.context, MainActivity::class.java)
             startActivity(intent)
         }
 

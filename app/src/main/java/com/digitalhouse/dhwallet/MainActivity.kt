@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, TransactionFragment.newInstance("R$ 45,35","R$ 536"))
+            .replace(R.id.fragment_container, TransactionFragment.newInstance("R$ 45,35","R$ 536,0"))
             .addToBackStack("transaction_fragment")
             .commit()
 

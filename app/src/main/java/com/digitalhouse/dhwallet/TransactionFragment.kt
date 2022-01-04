@@ -27,9 +27,13 @@ class TransactionFragment : Fragment(R.layout.fragment_transaction) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val entradaView = view.findViewById<TextView>(R.id.entrada)
+        val entradaView = view.findViewById<TextView>(R.id.input_value)
         entrada?.let {
             entradaView.text = it
+        }
+        val saidaView = view.findViewById<TextView>(R.id.output_value)
+        saida?.let {
+            saidaView.text = it
         }
     }
 
