@@ -9,39 +9,49 @@
     android:layout_marginBottom="1dp">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/image_company"
         android:layout_width="56dp"
         android:layout_height="56dp"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_spotify"
+        tools:src="@drawable/ic_dribble"
         tools:ignore="ContentDescription" />
 
     <TextView
         style="@style/Subtitle"
-        android:id="@+id/item_contact_title"
+        android:id="@+id/item_company_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toTopOf="@id/image"
-        app:layout_constraintBottom_toTopOf="@id/item_contact_subtitle"
+        app:layout_constraintStart_toEndOf="@id/image_company"
+        app:layout_constraintTop_toTopOf="@id/image_company"
+        app:layout_constraintBottom_toTopOf="@id/item_company_subtitle"
         app:layout_constraintVertical_chainStyle="packed"
         android:layout_marginStart="16dp"
+        tools:text="Dribble Inc."
         android:textStyle="bold"
-        tools:text="Leslee Moss"
         tools:ignore="MissingConstraints" />
 
     <TextView
         style="@style/Body1"
-        android:id="@+id/item_contact_subtitle"
+        android:id="@+id/item_company_subtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/item_contact_title"
-        app:layout_constraintBottom_toBottomOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/item_contact_title"
-        tools:text="Irmã"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="@id/item_company_title"
+        app:layout_constraintBottom_toBottomOf="@id/image_company"
+        app:layout_constraintTop_toBottomOf="@id/item_company_title"
+        tools:text="Pagamento"
+        tools:ignore="MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/value_company"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/image_company"
+        android:layout_marginTop="19dp"
+        android:layout_marginStart="250dp"
+        android:textColor="@color/apple"
+        android:text="Valor"
+        app:layout_constraintTop_toTopOf="@+id/image_company"/>
 
 
 

@@ -34,7 +34,7 @@ class TransferFragment : Fragment(R.layout.fragment_transfer){
 
         }
         //testando
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view_transfer)
         recyclerView.adapter = ContactAdapter(listContact)
 
     }
