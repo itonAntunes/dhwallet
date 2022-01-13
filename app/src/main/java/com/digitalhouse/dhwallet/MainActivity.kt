@@ -3,6 +3,7 @@ package com.digitalhouse.dhwallet
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.FragmentContainerView
 import com.google.android.material.button.MaterialButton
 
@@ -19,6 +20,10 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack("transaction_fragment")
             .commit()
 
+//        findViewById<Button>(R.id.btn_next).setOnClickListener{
+//            navigateToMovieTransfer()
+//        }
+
         findViewById<Button>(R.id.btn_next).setOnClickListener{
             navigateToTransfer()
         }
@@ -29,5 +34,12 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragment_container, TransferFragment())
             .addToBackStack(null)
             .commit()
+    }
+    private fun navigateToMovieTransfer(){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, MovieFragment())
+            .addToBackStack(null)
+            .commit()
+
     }
 }

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.digitalhouse.dhwallet.adapter.ContactAdapter
 import com.digitalhouse.dhwallet.model.Contact
@@ -20,7 +21,7 @@ class TransferFragment : Fragment(R.layout.fragment_transfer){
 
 
         val profile = view.findViewById<ImageView>(R.id.profile)
-        profile.setOnClickListener{
+        profile.setOnClickListener {
             val intent = Intent(it.context, MainActivity::class.java)
             startActivity(intent)
         }
@@ -31,8 +32,14 @@ class TransferFragment : Fragment(R.layout.fragment_transfer){
                 name = "Rick",
                 image = "https://mixdeseries.com.br/wp-content/uploads/2021/07/rick-and-morty-s5-5-1.jpg"
             );
-
         }
+        listContact.add(
+            Contact(
+                type = ContactType.AMIGO,
+                name = "Morty",
+                image = "https://epipoca.com.br/wp-content/uploads/2021/02/rick-and-morty-1200x900.jpg"
+            )
+        )
         //testando
         val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view_transfer)
         recyclerView.adapter = ContactAdapter(listContact)
