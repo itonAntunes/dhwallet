@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.digitalhouse.dhwallet.adapter.ContactAdapter
 import com.digitalhouse.dhwallet.model.Contact
 import com.digitalhouse.dhwallet.model.ContactType
+import com.digitalhouse.dhwallet.model.GroupContact
+import com.digitalhouse.dhwallet.model.GroupType
 import kotlin.jvm.internal.Intrinsics
 
 
@@ -26,19 +28,34 @@ class TransferFragment : Fragment(R.layout.fragment_transfer){
             startActivity(intent)
         }
 
-        val listContact = MutableList (10){
-            Contact(
-                type = ContactType.AMIGO,
-                name = "Rick",
-                image = "https://mixdeseries.com.br/wp-content/uploads/2021/07/rick-and-morty-s5-5-1.jpg"
-            );
-        }
-        listContact.add(
-            Contact(
-                type = ContactType.AMIGO,
+        val listContact = listOf<GroupContact>(
+            GroupContact(
+                type = GroupType.TITLE,
+                title = "Rick",
+                image = "https://mixdeseries.com.br/wp-content/uploads/2021/07/rick-and-morty-s5-5-1.jpg",
+                contactType = ContactType.AMIGO
+            ),
+
+            GroupContact(
+                type = GroupType.CONTENT,
                 name = "Morty",
-                image = "https://epipoca.com.br/wp-content/uploads/2021/02/rick-and-morty-1200x900.jpg"
-            )
+                image = "https://epipoca.com.br/wp-content/uploads/2021/02/rick-and-morty-1200x900.jpg",
+                contactType = ContactType.IRMAO
+            ),
+
+            GroupContact(
+                type = GroupType.CONTENT,
+                name = "Morty",
+                image = "https://epipoca.com.br/wp-content/uploads/2021/02/rick-and-morty-1200x900.jpg",
+                contactType = ContactType.IRMAO
+            ),
+
+            GroupContact(
+                type = GroupType.TITLE,
+                title = "Rick",
+                image = "https://mixdeseries.com.br/wp-content/uploads/2021/07/rick-and-morty-s5-5-1.jpg",
+                contactType = ContactType.AMIGO
+            ),
         )
         //testando
         val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view_transfer)
