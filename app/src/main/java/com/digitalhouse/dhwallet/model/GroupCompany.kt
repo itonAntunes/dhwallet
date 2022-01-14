@@ -2,17 +2,20 @@ package com.digitalhouse.dhwallet.model
 
 import android.widget.ImageView
 
-class GroupContact (
-    val type: GroupType,
+class GroupCompany (
+    val type: GroupCompanyType,
     val title : String? = null,
     val image: String? = null,
     val name: String? = null,
     val contactType: ContactType? = null,
     val description: String? = null,
     val value: String? = null
+
 )
 
-enum class GroupType{
+enum class GroupCompanyType{
     TITLE,
-    CONTENT
+    CONTENT,
+    PAGAMENTO,
+    RECEBIMENTO
 }
